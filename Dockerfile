@@ -22,4 +22,8 @@ RUN R -e 'source("http://bioconductor.org/biocLite.R"); biocLite("annotate")'
 RUN R -e 'source("http://bioconductor.org/biocLite.R"); biocLite("org.Hs.eg.db")'
 
 
-CMD R --no-save
+RUN apt-get install -yes git
+RUN  git clone https://github.com/kubranarci/edgeR-noReplicate.git
+RUN cd edgeR-noReplicate
+
+
