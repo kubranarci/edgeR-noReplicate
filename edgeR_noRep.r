@@ -8,16 +8,12 @@
 
 args = commandArgs(trailingOnly=TRUE)
 source("http://bioconductor.org/biocLite.R")
-
 biocLite("lattice")
 biocLite("edgeR")
 library(lattice)
 library(edgeR)
 biocLite("org.Hs.eg.db")
-biocLite("org.Hs.eg.db")
 library(org.Hs.eg.db)
-biocLite("annotate")
-library(annotate)
 
 #create count table
 countsTable=read.delim(file=args[1],header=TRUE, row.names = 1)
