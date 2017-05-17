@@ -3,10 +3,13 @@
 
 ....usage.....
 
-CountTable.txt  1. CONTROL 2. SAMPLE
+CountTable.txt  1. CONTROL 2. SAMPLE  
 
 edgeR_noRep.R INPUT_CountTable.txt  dispersion  FDR_value_up FDR_value_down  P_value  UP_regulated_file DOWN_regulated_file   All_file
 
 Disregulated genes are annotated using R org.Hs.eg.db package, and only Ensembl Gene ID could be used as key 
 
+#prepare_countMatrix.pl is to prepare edgeR compatable CountTable.txt from count table results from HTSeq count results.
 
+
+!This version is only applicable for GRCh38/hg38
