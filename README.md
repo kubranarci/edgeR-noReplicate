@@ -2,9 +2,11 @@
 
 
 #....usage.....
+
 #CountTable.txt 
   1. CONTROL 2. SAMPLE
-# edgeR_noRep.R INPUT_CountTable.txt  dispersion  FDR_value_up FDR_value_down  P_value  UP_regulated_file DOWN_regulated_file   All_file
+
+edgeR_noRep.R INPUT_CountTable.txt  dispersion  FDR_value_up FDR_value_down  P_value  UP_regulated_file DOWN_regulated_file   All_file
 
 Disregulated genes are annotated using R org.Hs.eg.db package, and only Ensembl Gene ID could be used as key 
 
