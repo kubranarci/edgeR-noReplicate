@@ -25,16 +25,23 @@ edgeR dispersion prediction code to run in SevenBridges platform
 . prepare count_table for all counts for your cell line: count_matrix.txt
 
 #ENSEMBL_GENE_ID	HDMSO	HALPHA	HBETA	H-S-ALPHA	H-S-BETA	HSOR
+
 #ENSG00000000003	1133	918	953	1185	730	864
+
 #ENSG00000000005	1	0	1	0	0	0
+
 #ENSG00000000419	623	173	349	431	413	527
 
 . prepare ENSEMBL_GENE_ID vs GENE_NAME table for your house keeping genes; house_keeping_genes.txt
 
 #ENSEMBL_GENE_ID	GENE_NAME
+
 #ENSG00000128513	POT1
+
 #ENSG00000253729	PRKDC
+
 #ENSG00000168539	CHRM1
+
 #ENSG00000164924	YWHAZ
 
 ....usage.....
