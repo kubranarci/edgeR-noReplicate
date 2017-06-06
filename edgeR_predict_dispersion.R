@@ -24,21 +24,21 @@
 
 args = commandArgs(trailingOnly=TRUE)
 
-ensembl_gene_id = read.delim( file = "~/Desktop/ws/boentempo_HK_genes_mart_export.txt", sep="\t", header=T, stringsAsFactors = F)
-count_matrix = read.delim( file = "~/Desktop/ws/huh7-countmatrix.txt", sep="\t", header=T, stringsAsFactors = F)
+ensembl_gene_id = read.delim( file = args[1], sep="\t", header=T, stringsAsFactors = F)
+count_matrix = read.delim( file = args[2], sep="\t", header=T, stringsAsFactors = F)
 
 merged=merge(ensembl_gene_id,count_matrix, by="ENSEMBL_GENE_ID", all=FALSE)
 
-#source("http://bioconductor.org/biocLite.R")
-#biocLite("lattice")
-#biocLite("edgeR")
-#biocLite("RcppArmadillo")
-#biocLite("limma")
+source("http://bioconductor.org/biocLite.R")
+biocLite("lattice")
+biocLite("edgeR")
+biocLite("RcppArmadillo")
+biocLite("limma")
 
-#library(lattice)
-#library(edgeR)
-#library(RcppArmadillo)
-#library(limma)
+library(lattice)
+library(edgeR)
+library(RcppArmadillo)
+library(limma)
 
 
 #create count table
@@ -50,7 +50,7 @@ merged <- merged[,-1]
 
 number=ncol(merged)
 
-mobDataGroups <- c( as.integer(runif(number/2, min = 1, max = (2))), as.integer(runif(number/2, min = 2, max = (3))) )
+mobDataGroups <- c( as.integer(runif(as.integer(number/2), min = 1, max = (2))), as.integer(runif(as.integer(number/2), min = 2, max = (3))) )
 #specific to edgeR keep data in DGElist format
 d <- DGEList(counts=merged ,group=factor(mobDataGroups))
 d <- calcNormFactors(d)
@@ -59,4 +59,4 @@ d <- estimateDisp(d,design)
 
 d$common.dispersion
 cat(d$common.dispersion)
-write.table(d, "dispertion.txt")
+write.table(d$common.dispersion, "dispertion.txt")
