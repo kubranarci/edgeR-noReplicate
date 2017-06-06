@@ -32,13 +32,11 @@ merged=merge(ensembl_gene_id,count_matrix, by="ENSEMBL_GENE_ID", all=FALSE)
 source("http://bioconductor.org/biocLite.R")
 biocLite("lattice")
 biocLite("edgeR")
-biocLite("RcppArmadillo")
-biocLite("limma")
+
 
 library(lattice)
 library(edgeR)
-library(RcppArmadillo)
-library(limma)
+
 
 
 #create count table
